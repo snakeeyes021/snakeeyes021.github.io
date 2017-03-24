@@ -1,0 +1,11 @@
+.highlightit img{
+border: 1px solid black;
+}
+
+.highlightit:hover img{
+border: 1px solid white;
+}
+
+.highlightit:hover{
+color: red; /* Dummy definition to overcome IE bug */
+}
