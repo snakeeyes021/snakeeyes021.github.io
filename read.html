@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Score reader · Matthew Samson</title>
+  <meta name="description" content="Read Matthew Samson's scores in the browser, or download the PDFs.">
+  <meta name="theme-color" content="#2a2926">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/reader.css">
+</head>
+<body class="reader-page">
+  <header class="rd-head">
+    <a class="rd-back" href="music.html" aria-label="Back to the music">← <span>Music</span></a>
+    <div class="rd-titles">
+      <h1 id="rd-title">Loading…</h1>
+      <p id="rd-sub" class="rd-sub"></p>
+    </div>
+    <div class="rd-head-actions">
+      <select id="rd-file" aria-label="Score or part" hidden></select>
+      <a id="rd-download" class="rd-download" href="#" download>PDF ↓</a>
+    </div>
+  </header>
+
+  <div class="rd-toolbar" role="toolbar" aria-label="Reader controls">
+    <div class="rd-group">
+      <button id="rd-prev" type="button" aria-label="Previous page" title="Previous page (←)">‹</button>
+      <label class="rd-pageno">
+        <span class="visually-hidden">Page</span>
+        <input id="rd-page" type="number" inputmode="numeric" min="1" value="1">
+        <span>/ <span id="rd-pages">–</span></span>
+      </label>
+      <button id="rd-next" type="button" aria-label="Next page" title="Next page (→)">›</button>
+    </div>
+    <div class="rd-group">
+      <button id="rd-zoom-out" type="button" aria-label="Zoom out" title="Zoom out (−)">−</button>
+      <select id="rd-zoom" aria-label="Zoom">
+        <option value="width">Fit width</option>
+        <option value="page">Whole page</option>
+        <option value="0.75">75%</option>
+        <option value="1">100%</option>
+        <option value="1.5">150%</option>
+        <option value="2">200%</option>
+        <option value="1" data-custom hidden>–</option>
+      </select>
+      <button id="rd-zoom-in" type="button" aria-label="Zoom in" title="Zoom in (+)">+</button>
+    </div>
+    <div class="rd-group">
+      <button id="rd-spread" type="button" aria-pressed="false" title="Show two pages side by side (D)">Two pages</button>
+      <button id="rd-full" type="button" title="Full screen (F)" aria-label="Full screen" hidden>Full<span class="rd-full-word"> screen</span></button>
+    </div>
+  </div>
+
+  <main id="rd-viewport" class="rd-viewport" tabindex="-1">
+    <div id="rd-status" class="rd-status" role="status">Loading…</div>
+    <div id="rd-box" class="rd-box"></div>
+  </main>
+
+  <footer class="rd-foot">
+    <p id="rd-credit"></p>
+    <p class="rd-keys">← → or a page-turn pedal to turn pages</p>
+  </footer>
+
+  <script src="works/catalogue.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/reader.js"></script>
+</body>
+</html>
