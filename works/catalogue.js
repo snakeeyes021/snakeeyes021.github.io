@@ -18,12 +18,33 @@
     note             a short note in your own voice. Plain text; blank lines start new paragraphs.
     files            one or more PDFs: { label: "Full score", path: "works/<id>/<file>.pdf" }
                      The first file is the one the reader opens by default.
+    publisher        for a piece that's published elsewhere instead of hosted here:
+                     { name: "GIA", url: "https://…" }. Leave out "files" for these;
+                     the catalogue shows "Published by <name>" with a link instead.
     listen           optional links to recordings: { label: "SoundCloud", url: "https://…" }
     license          optional. Leave it out to use the site-wide license (set in assets/js/site.js).
     placeholder      true only for the dummy entries. Delete those entries once real pieces exist.
 */
 
 window.WORKS = [
+  {
+    id: "vampires",
+    title: "Vampires",
+    year: 2019,
+    category: "Choral",
+    instrumentation: "SATB, unaccompanied",
+    text: "Words by Charles Anthony Silvestri, from I Wonder…",
+    publisher: { name: "MusicSpoke", url: "https://www.musicspoke.com/downloads/vampires/" }
+  },
+  {
+    id: "anna-thy-charms",
+    title: "Anna, Thy Charms",
+    year: 2008,
+    category: "Choral",
+    instrumentation: "SSATBB",
+    text: "Words by Robert Burns",
+    publisher: { name: "GIA", url: "https://giamusic.com/resource/anna-thy-charms-print-g7459" }
+  },
   {
     id: "placeholder-one",
     placeholder: true,

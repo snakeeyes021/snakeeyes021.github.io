@@ -115,6 +115,15 @@ window.SITE = {
       body.append(files);
     }
 
+    if (options.files && work.publisher && work.publisher.url) {
+      body.append(
+        el("p", { class: "publisher" }, [
+          "Published by ",
+          el("a", { href: work.publisher.url, rel: "external", text: work.publisher.name || "the publisher" })
+        ])
+      );
+    }
+
     if (options.files && Array.isArray(work.listen) && work.listen.length) {
       const listen = el("p", { class: "listen" }, ["Listen: "]);
       work.listen.forEach((link) => listen.append(el("a", { href: link.url, text: link.label })));
@@ -170,7 +179,8 @@ window.SITE = {
     }
 
     function haystack(work) {
-      return [work.title, work.year, work.category, work.instrumentation, work.text, work.note]
+      return [work.title, work.year, work.category, work.instrumentation, work.text, work.note,
+        work.publisher && work.publisher.name]
         .filter(Boolean)
         .join(" ")
         .toLowerCase();

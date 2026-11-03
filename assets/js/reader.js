@@ -458,6 +458,22 @@ function start() {
   const works = Array.isArray(window.WORKS) ? window.WORKS : [];
   const work = works.find((w) => w.id === params.id);
 
+  // Published elsewhere: no PDF here, so point to the publisher's page.
+  if (work && work.publisher && work.publisher.url && !(Array.isArray(work.files) && work.files.length)) {
+    const { el } = window.SiteKit;
+    document.title = work.title + " · Matthew Samson";
+    ui.title.textContent = work.title;
+    ui.sub.textContent = [work.instrumentation, work.year].filter(Boolean).join(" · ");
+    showStatus("");
+    ui.status.append(
+      "Published by ",
+      el("a", { href: work.publisher.url, rel: "external", text: work.publisher.name || "the publisher" }),
+      "."
+    );
+    document.body.classList.add("is-empty");
+    return;
+  }
+
   if (!work || !Array.isArray(work.files) || !work.files.length) {
     ui.title.textContent = params.id ? "Piece not found" : "Choose a piece";
     showStatus(

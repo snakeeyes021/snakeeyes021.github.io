@@ -11,6 +11,9 @@ from `main` (`.nojekyll` turns off Jekyll; `CNAME` points the domain here).
    from it.
 3. Commit and push.
 
+A piece that's published elsewhere gets a `publisher` field instead of `files`. The
+catalogue then links to the publisher's page.
+
 ## Setting the license
 
 Set `license` in `assets/js/site.js` (name and URL). Every mention of the license on
@@ -27,6 +30,7 @@ field in the catalogue.
 | Using the music | `use.html` |
 | About | `about.html` |
 | Contact | `contact.html` |
+| Press: photos and bios for presenters (footer link only) | `press.html` |
 | Not found | `404.html` |
 
 Styles are in `assets/css/` (`site.css` for everything, `reader.css` for the reader),
