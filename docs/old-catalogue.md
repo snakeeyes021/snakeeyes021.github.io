@@ -11,7 +11,11 @@ Questions for each piece before it goes up:
 - Year of composition (the old site didn't list years).
 - Is it yours to license? **Anna, thy Charms** is published by GIA, so it probably
   can't go under Creative Commons. Link to GIA instead, or leave it out.
-- Is the old issuu perusal score the current version, or is there a newer one?
+- Where's the current score? The issuu account is gone (checked 3 Nov 2026), so every
+  "perusal score" link below is dead.
+
+The fuller list, built from the CVs, SoundCloud, Bandcamp and YouTube, is in
+`works-catalogue-draft.md`.
 
 ## Orchestral
 
