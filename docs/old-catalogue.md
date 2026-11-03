@@ -14,9 +14,6 @@ Questions for each piece before it goes up:
 - Where's the current score? The issuu account is gone (checked 3 Nov 2026), so every
   "perusal score" link below is dead.
 
-The fuller list, built from the CVs, SoundCloud, Bandcamp and YouTube, is in
-`works-catalogue-draft.md`.
-
 ## Orchestral
 
 - [ ] Transcendent Man: 3333-4331-3, perc, timp, harp, pno, strings.
